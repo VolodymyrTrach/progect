@@ -9,18 +9,15 @@ import PagesButtonGroup from './components/postsPerPageButtons';
 
 function App() {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  // const [postsPerPage, setPostsPerPage] = useState(15);
-  const [postsPerPage] = useState(15);
+  const [postsPerPage, setPostsPerPage] = useState(15);
+  // const [postsPerPage] = useState(15);
 
 
   useEffect(() => {
     const fechPosts = async () => {
-      setLoading(true);
       const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
       setPosts(res.data);
-      setLoading(false);
     }
     fechPosts()
   }, []);
@@ -32,12 +29,12 @@ function App() {
 
   //Change view
   const paginateMethod = (event, value) => setCurrentPage(value);
-  const changeItemsMethod = number => console.log('this is  ' + number);
+  const changeItemsMethod = (number) => setPostsPerPage(number);
 
 
   return (
     <>
-      <Posts posts={currentPosts} loading={loading} />
+      <Posts posts={currentPosts} />
       <PaginationJs postPerPage={postsPerPage} totalPosts={posts.length} paginate={paginateMethod} />
       <PagesButtonGroup changeItems={changeItemsMethod} />
     </>
