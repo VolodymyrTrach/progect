@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Pagination from '@material-ui/lab/Pagination';
 
 export default function PaginationJs({ postPerPage, totalPosts, paginate, currentPage }) {

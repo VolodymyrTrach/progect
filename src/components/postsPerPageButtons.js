@@ -1,14 +1,15 @@
 import React from 'react'
 import { Button, ButtonGroup } from '@material-ui/core';
 
-export default function PagesButtonGroup(changeItems) {
-    const itemsPerPage = [15, 30, 60]
+export default function PagesButtonGroup({changeItems}) {
+    const itemsPerPage = [15, 30, 60];
+    const pickAmount = number => changeItems(number)
     return (
         <ButtonGroup variant="contained" aria-label="contained primary button group">
             {itemsPerPage.map(number => (
                 <Button
                     key={number}
-                    onClick={() => changeItems(number)}>
+                    onClick={() => pickAmount(number)}>
                     {number}
                 </Button>))}
         </ButtonGroup>
