@@ -11,7 +11,6 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(15);
-  // const [postsPerPage] = useState(15);
 
 
   useEffect(() => {
