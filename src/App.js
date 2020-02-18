@@ -29,13 +29,13 @@ function App() {
   //Change view
   const paginateMethod = (event, value) => setCurrentPage(value);
   const changeItemsMethod = (number) => setPostsPerPage(number);
-
+  const changePagination = () => setCurrentPage(1)
 
   return (
     <>
       <Posts posts={currentPosts} />
       <PaginationJs postPerPage={postsPerPage} totalPosts={posts.length} paginate={paginateMethod} />
-      <PagesButtonGroup changeItems={changeItemsMethod} />
+      <PagesButtonGroup changeItems={changeItemsMethod} changeCurrentPage={changePagination} />
     </>
   );
 }

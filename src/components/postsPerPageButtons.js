@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, ButtonGroup } from '@material-ui/core';
 
-export default function PagesButtonGroup({changeItems}) {
+export default function PagesButtonGroup({changeItems,changeCurrentPage}) {
     const itemsPerPage = [15, 30, 60];
     const pickAmount = number => changeItems(number)
     return (
@@ -9,7 +9,9 @@ export default function PagesButtonGroup({changeItems}) {
             {itemsPerPage.map(number => (
                 <Button
                     key={number}
-                    onClick={() => pickAmount(number)}>
+                    onClick={() => {
+                        pickAmount(number);
+                        changeCurrentPage()}}>
                     {number}
                 </Button>))}
         </ButtonGroup>
