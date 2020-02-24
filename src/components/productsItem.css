@@ -1,5 +1,19 @@
 .posts {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.productCart {
+  position: relative;
+}
+.cardPrice {
+  width: 70px;
+  height: 30px;
+  background-color: rgb(172, 59, 59);
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
 }
