@@ -1,5 +1,7 @@
 import React from 'react';
-import Pagination from '@material-ui/lab/Pagination';
+// import Pagination from '@material-ui/lab/Pagination';
+import Pagination from 'react-bootstrap/Pagination'
+
 
 export default function PaginationJs({ postPerPage, totalPosts, paginate, currentPage }) {
     const pageNumbers = [];

@@ -1,12 +1,14 @@
 import React from 'react'
+import ProductsItem from './ProductsItem';
+import './productsItem.css';
 
-export const Posts = ({posts}) => {
-    
+export const Posts = ({ posts }) => {
+
     return (
-        <ul>
-            {posts.map(post =>(
-                <li key={post.id}>{post.title}</li>
+        <div className='posts'>
+            {posts.map(post => (
+                <ProductsItem keyID={post.id} post={post.title}></ProductsItem>
             ))}
-        </ul>
+        </div>
     )
 }

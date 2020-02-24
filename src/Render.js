@@ -7,7 +7,7 @@ import PagesButtonGroup from './components/postsPerPageButtons';
 
 
 
-function App() {
+function Render() {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(15);
@@ -33,11 +33,11 @@ function App() {
 
   return (
     <>
+      <PagesButtonGroup changeItems={changeItemsMethod} changeCurrentPage={changePagination} />
       <Posts posts={currentPosts} />
       <PaginationJs postPerPage={postsPerPage} totalPosts={posts.length} paginate={paginateMethod} />
-      <PagesButtonGroup changeItems={changeItemsMethod} changeCurrentPage={changePagination} />
     </>
   );
 }
 
-export default App;
+export default Render;
