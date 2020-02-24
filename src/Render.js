@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
+import './Render.css';
 import { Posts } from './components/Posts';
-import PaginationJs from './components/Pagination';
+import Pagination from './components/Pagination';
 import PagesButtonGroup from './components/postsPerPageButtons';
 
 
@@ -27,16 +27,16 @@ function Render() {
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
   //Change view
-  const paginateMethod = (event, value) => setCurrentPage(value);
+  const paginateMethod = (value) => setCurrentPage(value);
   const changeItemsMethod = (number) => setPostsPerPage(number);
   const changePagination = () => setCurrentPage(1)
 
   return (
-    <>
-      <PagesButtonGroup changeItems={changeItemsMethod} changeCurrentPage={changePagination} />
+    <section className='leftSide'>
+      <PagesButtonGroup changeItems={changeItemsMethod} changeCurrentPage={changePagination} className="buttonsGroup"/>
       <Posts posts={currentPosts} />
-      <PaginationJs postPerPage={postsPerPage} totalPosts={posts.length} paginate={paginateMethod} />
-    </>
+      <Pagination postPerPage={postsPerPage} totalPosts={posts.length} paginate={paginateMethod} />
+    </section>
   );
 }
 
